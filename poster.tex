@@ -207,7 +207,7 @@ Nevertheless, when the number of contenders surpasses $CW_{\min}/2$, the system 
 
 \headerbox{3. CSMA/ECA + hysteresis and fair share}{name=fullECA,column=1,span=1,below=motivation}{
 
-CSMA/ECA is totally distributed, that means that the number of nodes is unknown to all contenders. So, to make it possible to achieve a collision-free state with more than $CW{\min}/2$ contenders, CSMA/ECA:
+CSMA/ECA is totally distributed, that means that the number of nodes is unknown to all contenders. So, to make it possible to achieve a collision-free state with more than $CW_{\min}/2$ contenders, CSMA/ECA:
 \begin{itemize}
 	\item Instructs nodes {\bfseries not} to reset their backoff stage after successful transmissions. It is reset only when the queue is empty.
 	\item Picks a new deterministic backoff $B_{d}=CW(k)/2$.
@@ -275,7 +275,7 @@ This work has been partially supported by the Spanish Government, through the pr
  \begin{thebibliography}{1}
 % 
  \bibitem{CSMA_ECA}
-Barcelo, J. and Toledo, A.L. and Cano, C. and Oliver, M.
+Barcelo, J. and Lopez-Toledo, A. and Cano, C. and Oliver, M.
 \newblock Fairness and Convergence of CSMA with Enhanced Collision Avoidance (ECA).
 \newblock {\em 2010 IEEE International Conference on Communications (ICC)} , may 2010, pp 1--6.
 
