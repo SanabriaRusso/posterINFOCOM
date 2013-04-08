@@ -127,7 +127,7 @@ Collisions are a main cause of throughput degradation in Wireless Local Area Net
 
 }
 
-\headerbox{CSMA/CA}{name=contention,column=0,below=motivation}{
+\headerbox{1. CSMA/CA}{name=contention,column=0,below=motivation}{
 
 Carrier Sense Multiple Access with Collision Avoidance (CSMA/CA) is the most widely used protocol for medium access control (MAC) in WLANs. CSMA/CA's job is to coordinate access to the medium for each contender.
 \\\\
@@ -159,7 +159,7 @@ When a node has something to transmit:
 \end{center}
 }
 
-\headerbox{Basic CSMA/ECA}{name=hysteresis,column=0,below=contention}{
+\headerbox{2. Basic CSMA/ECA}{name=hysteresis,column=0,below=contention}{
 
 CSMA/CA relies in a random backoff counter ($B$) which by its nature generates collisions. Furthermore, CSMA/CA instructs nodes to reset the backoff stage ($k$) after a successful transmission: increasing the collision probability. 
 \\\\
@@ -205,16 +205,14 @@ Nevertheless, when the number of contenders surpasses $CW_{\min}/2$, the system 
 % 
 % }
 
-\headerbox{CSMA/ECA + hysteresis and fair share}{name=fullECA,column=1,span=1,below=motivation}{
+\headerbox{3. CSMA/ECA + hysteresis and fair share}{name=fullECA,column=1,span=1,below=motivation}{
 
 CSMA/ECA is totally distributed, that means that the number of nodes is unknown to all contenders. So, to make it possible to achieve a collision-free state with more than $CW{\min}/2$ contenders, CSMA/ECA:
 \begin{itemize}
 	\item Instructs nodes {\bfseries not} to reset their backoff stage after successful transmissions. It is reset only when the queue is empty.
 	\item Picks a new deterministic backoff $B_{d}=CW(k)/2$.
 \end{itemize}
-We called this measure \emph{hysteresis}.
-\\\\
-With hysteresis some nodes may have larger $B_{d}$ than others.~This~unfairness issue is averted by:
+We called this measure \emph{hysteresis}. With hysteresis some nodes may have larger $B_{d}$ than others.~This~unfairness issue is averted by:
 
 \begin{itemize}
 	\item Allowing nodes at backoff stage $k$ to send $2^{k}$ packets. 
@@ -248,7 +246,7 @@ This is called \emph{fair share}~\cite{fairness-ECA}.
 
 }
 
-\headerbox{Conclusions and Future plans}{name=future,column=1,below=fullECA}{
+\headerbox{4. Conclusions, Future plans and Acknowledgements}{name=future,column=1,below=fullECA}{
 
 Hysteresis allows CSMA/ECA to allocate any number of contenders in a collision-free state, while fair share compensates the unfairness issue; allowing CSMA/ECA to attain greater throughput than CSMA/CA under most typical conditions.
 
@@ -258,6 +256,8 @@ As future work, we plan to:
 	\item Implement IEEE 802.11e EDCA quality of service measures.
 	\item Implement CSMA/ECA in cheap commodity hardware~\cite{WMP}.
 \end{itemize}
+
+This work has been partially supported by the Spanish Government, through the project CISNETS (Plan Nacional I+D+i, TEC2012-32354).
 }
 
 \headerbox{References}{name=references,span=1,column=1,above=bottom}{
